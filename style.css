@@ -333,6 +333,15 @@ body {
     margin-bottom: 5px;
 }
 
+.color-desc {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 5px;
+    width: 120px; /* 限制宽度，防止文字太长破坏排版 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .color-card p {
     font-size: 0.85rem;
     color: #888;
@@ -731,5 +740,72 @@ body {
 
     .eti-text {
         text-align: center;
+    }
+}
+/* ========== 新增：华服诗词样式 ========== */
+.poetry-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.poem-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary-color);
+}
+
+    .poem-card h3 {
+        color: var(--primary-color);
+        font-family: "Ma Shan Zheng", cursive;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .poem-card .author {
+        color: #888;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+.poem-text {
+    font-size: 1.2rem;
+    line-height: 2.2;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.poem-desc {
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px dashed #ddd;
+    padding-top: 15px;
+}
+
+/* ========== 新增：点击落花特效 ========== */
+.petal {
+    position: fixed;
+    pointer-events: none; /* 防止遮挡点击 */
+    z-index: 9999;
+    border-radius: 50% 0 50% 50%; /* 花瓣形状 */
+    background-color: #F4A4B4; /* 桃花粉 */
+    animation: fall 1.5s ease-out forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100px) rotate(360deg) scale(0.5);
+        opacity: 0;
     }
 }

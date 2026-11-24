@@ -132,3 +132,33 @@ function nextQuestion() {
 
 // 页面加载时初始化第一题
 loadQuestion();
+
+// 5. 点击屏幕飘落花瓣特效 (v2.0 新增)
+document.addEventListener('click', function (e) {
+    createPetal(e.clientX, e.clientY);
+});
+
+function createPetal(x, y) {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+
+    // 随机大小
+    const size = Math.random() * 10 + 8;
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+
+    // 定位在鼠标点击处
+    petal.style.left = `${x}px`;
+    petal.style.top = `${y}px`;
+
+    // 随机水平漂移
+    const randomX = (Math.random() - 0.5) * 100;
+    petal.style.setProperty('--random-x', `${randomX}px`);
+
+    document.body.appendChild(petal);
+
+    // 动画结束后移除元素
+    setTimeout(() => {
+        petal.remove();
+    }, 1500);
+}

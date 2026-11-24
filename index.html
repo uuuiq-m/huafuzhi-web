@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华服志 · 华夏衣裳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 悬浮音乐播放器 -->
+    <div class="music-player" id="musicBtn" onclick="toggleMusic()" title="点击播放/暂停背景音乐">
+        <span id="musicIcon">🎵</span>
+    </div>
+    <!-- ⚠️ 音乐替换：把你下载的 mp3 放到 wwwroot 里，名字改成 music.mp3 即可 -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="logo">华服志</div>
+        <nav>
+            <a href="#home">首页</a>
+            <a href="#history">衣冠简史</a>
+            <a href="#xingzhi">形制图鉴</a>
+            <a href="#colors">传统色</a>
+            <a href="#accessories">华服配件</a>
+            <a href="#etiquette">华夏礼仪</a>
+            <a href="#patterns">传统纹样</a>
+            <a href="#feiyi">非遗工艺</a>
+            <a href="#quiz">趣味问答</a>
+        </nav>
+    </header>
+
+    <!-- 首屏海报 -->
+    <!-- ⚠️ 背景图替换：把你下载的背景图放到 wwwroot，命名为 bg.jpg -->
+    <section id="home" class="hero" style="background: linear-gradient(rgba(38, 78, 102, 0.7), rgba(38, 78, 102, 0.8)), url('背景.jpg') center/cover no-repeat;">
+        <div class="hero-content">
+            <h1>华夏有衣，其名汉服</h1>
+            <div class="hero-line"></div>
+            <p>有服章之美谓之华，有礼仪之大故称夏。</p>
+            <a href="#history" class="btn-primary">探寻千年风华</a>
+        </div>
+    </section>
+
+    <!-- 衣冠简史 -->
+    <section id="history" class="section">
+        <h2 class="section-title">衣冠简史</h2>
+        <p class="section-sub">朝代更迭，衣袂飘飘，每一件衣裳都是历史的注脚</p>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>汉代 · 端庄凝重</h3>
+                    <p>曲裾深衣盛行，衣襟绕襟而下，交领右衽，宽袍大袖，尽显大汉气象。</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>唐代 · 繁华绚丽</h3>
+                    <p>襦裙鼎盛，胡风融合。齐胸衫裙、坦领半臂，色彩浓烈，展现盛唐的包容与自信。</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>宋代 · 清雅内敛</h3>
+                    <p>受理学影响，服饰趋于拘谨保守。褙子流行，色彩淡雅，讲究“三分留白七分韵”。</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>明代 · 恢复汉统</h3>
+                    <p>“上承周汉，下取唐宋”。马面裙、曳撒、披风大放异彩，端庄大气，等级森严。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 形制图鉴 -->
+    <section id="xingzhi" class="section bg-light">
+        <h2 class="section-title">形制图鉴</h2>
+        <p class="section-sub">交领右衽，系带隐扣，汉服的骨骼与灵魂</p>
+        <div class="grid-container">
+            <div class="grid-card reveal">
+                <img src="交领右祍.jpg" class="card-img" alt="交领右衽">
+                <div class="card-info">
+                    <h3>交领右衽</h3>
+                    <p>左侧衣襟掩住右侧衣襟，外观呈“y”字形，这是汉服最核心的特征。</p>
+                </div>
+            </div>
+            <div class="grid-card reveal">
+                <img src="宽袍大袖.jpg" class="card-img" alt="宽袍大袖">
+                <div class="card-info">
+                    <h3>宽袍大袖</h3>
+                    <p>袖型多样，有琵琶袖、广袖、箭袖等，举手投足间尽显飘逸。</p>
+                </div>
+            </div>
+            <div class="grid-card reveal">
+                <img src="系带隐扣.jpg" class="card-img" alt="系带隐扣">
+                <div class="card-info">
+                    <h3>系带隐扣</h3>
+                    <p>汉服多使用绳带系结，极少使用纽扣，衣带飘飘，含蓄内敛。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 中国传统色 (修复了排版嵌套Bug) -->
+    <section id="colors" class="section">
+        <h2 class="section-title">中国传统色</h2>
+        <p class="section-sub">远山如黛，近水含烟，中国人的浪漫都在颜色里</p>
+
+        <div class="color-grid">
+            <div class="color-card reveal">
+                <div class="color-block" style="background-color: #9E2B25;"></div>
+                <h4>胭脂</h4>
+                <p>#9E2B25</p>
+            </div>
+            <div class="color-card reveal">
+                <div class="color-block" style="background-color: #264E66;"></div>
+                <h4>黛蓝</h4>
+                <p>#264E66</p>
+            </div>
+            <div class="color-card reveal">
+                <div class="color-block" style="background-color: #F3DAA9;"></div>
+                <h4>缃色</h4>
+                <p>#F3DAA9</p>
+            </div>
+            <div class="color-card reveal">
+                <div class="color-block" style="background-color: #789262;"></div>
+                <h4>竹青</h4>
+                <p>#789262</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增：华服配件 -->
+    <section id="accessories" class="section">
+        <h2 class="section-title">华服配件</h2>
+        <p class="section-sub">服章之美，离不开点缀之华。君子无故，玉不去身。</p>
+
+        <div class="accessory-grid">
+            <div class="acc-card reveal">
+                <div class="acc-icon">簪</div>
+                <h3>发簪与步摇</h3>
+                <p>古人云“身体发肤，受之父母”，束发佩簪是成年的标志。步摇随行步而摇曳，尽显东方古典美。</p>
+            </div>
+            <div class="acc-card reveal">
+                <div class="acc-icon">玉</div>
+                <h3>玉佩与禁步</h3>
+                <p>“君子无故，玉不去身”。佩玉行走时发出的清脆声音，用于节制步伐，要求人走路端庄稳重。</p>
+            </div>
+            <div class="acc-card reveal">
+                <div class="acc-icon">香</div>
+                <h3>香囊与荷包</h3>
+                <p>不仅是服饰上的精致挂件，更内藏香草。古代青年男女常以香囊为定情信物，含情脉脉。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增：趣味知识问答 -->
+    <section id="quiz" class="section bg-light">
+        <h2 class="section-title">华服小考</h2>
+        <p class="section-sub">测一测你的“汉服浓度”</p>
+
+        <div class="quiz-container reveal">
+            <div class="quiz-header">
+                <span id="quiz-progress">第 1 / 3 题</span>
+                <span id="quiz-score">得分: 0</span>
+            </div>
+            <h3 id="question-text">题目加载中...</h3>
+            <div class="options" id="options-container">
+                <!-- 选项由 JS 动态生成 -->
+            </div>
+            <div id="quiz-result" class="quiz-result hidden"></div>
+            <button id="next-btn" class="btn-primary hidden" onclick="nextQuestion()">下一题</button>
+        </div>
+    </section>
+
+    <!-- 非遗工艺 -->
+    <section id="feiyi" class="section section-dark">
+        <h2 class="section-title">非遗织造</h2>
+        <p class="section-sub">锦、绣、染、缂，穿在身上的非物质文化遗产</p>
+        <div class="cards">
+            <div class="card reveal" onclick="showDetail('云锦', '南京云锦木机妆花手工织造技艺，有“寸锦寸金”之称。其色彩绚烂，如天上云霞。')">
+                <div class="card-icon">织</div>
+                <h3>南京云锦</h3>
+                <p>寸锦寸金，逐花异色，皇家御用。</p>
+            </div>
+            <div class="card reveal" onclick="showDetail('苏绣', '苏绣以针脚细密、色彩淡雅著称。平、齐、细、密、匀、顺、和、光，绣画合一。')">
+                <div class="card-icon">绣</div>
+                <h3>苏绣</h3>
+                <p>以针为笔，以丝为墨，绣画合一。</p>
+            </div>
+            <div class="card reveal" onclick="showDetail('扎染', '扎染古称扎缬。用线绳在布上结扎，浸入靛蓝染缸，拆开后每一件冰纹都独一无二。')">
+                <div class="card-icon">染</div>
+                <h3>白族扎染</h3>
+                <p>冰纹独特，青出于蓝而胜于蓝。</p>
+            </div>
+            <div class="card reveal" onclick="showDetail('缂丝', '缂丝采用“通经断纬”的织法，图案边缘如刀刻般清晰。有“一寸缂丝一寸金”之说。')">
+                <div class="card-icon">缂</div>
+                <h3>缂丝</h3>
+                <p>通经断纬，雕刻时光的织中之圣。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增板块 1：华夏礼仪 -->
+    <!-- 这里使用了浅色背景 bg-light 来与上一板块交替 -->
+    <section id="etiquette" class="section bg-light">
+        <h2 class="section-title">华夏礼仪</h2>
+        <p class="section-sub">有服章之美谓之华，有礼仪之大故称夏</p>
+
+        <div class="etiquette-list">
+            <div class="etiquette-item reveal">
+                <div class="eti-img-box">揖</div>
+                <div class="eti-text">
+                    <h3>拱手作揖（男子）</h3>
+                    <p>左手在外，右手在内，抱拳前推。男子尚左，所以左掌包右拳，表示以柔克刚、阳中有阴。这是古代最常用的相见礼。</p>
+                </div>
+            </div>
+            <div class="etiquette-item reveal">
+                <div class="eti-img-box">福</div>
+                <div class="eti-text">
+                    <h3>万福礼（女子）</h3>
+                    <p>双手交叠放在腹部偏右处，微蹲低头，口称“万福”。身姿优美，尽显女子的温婉端庄，是古代女子最常用的行礼方式。</p>
+                </div>
+            </div>
+            <div class="etiquette-item reveal">
+                <div class="eti-img-box">正</div>
+                <div class="eti-text">
+                    <h3>正坐与跪拜</h3>
+                    <p>两膝着地，臀部坐在脚后跟上，腰背挺直，这叫“正坐”。在正式场合或拜见尊长时，行稽首、顿首等大礼，是最高规格的敬意。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增板块 2：传统纹样 -->
+    <!-- 使用正常背景，深色卡片凸显质感 -->
+    <section id="patterns" class="section">
+        <h2 class="section-title">传统纹样</h2>
+        <p class="section-sub">图必有意，意必吉祥，衣襟上的千年图腾</p>
+
+        <div class="pattern-grid">
+            <div class="pattern-card reveal">
+                <div class="pattern-title">祥云纹</div>
+                <div class="pattern-content">
+                    <p>云纹是古人对于天象的敬畏与向往。形态连绵不断，寓意“渊源共生，和谐共融”，常出现在领口与袖缘。</p>
+                </div>
+            </div>
+            <div class="pattern-card reveal">
+                <div class="pattern-title">缠枝莲</div>
+                <div class="pattern-content">
+                    <p>以藤蔓、卷草为骨架，花大叶小。因为藤蔓连绵不断，被称为“万寿藤”，寓意生生不息、吉庆连绵。</p>
+                </div>
+            </div>
+            <div class="pattern-card reveal">
+                <div class="pattern-title">十二章纹</div>
+                <div class="pattern-content">
+                    <p>日、月、星辰、山、龙等十二种图案。这是古代帝王及高级官员礼服上专有的章纹，是等级与皇权礼制的最高象征。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 弹窗 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">标题</h2>
+            <p id="modal-desc">内容</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>华服志 · 汉服与非遗文化展示</p>
+        <p class="copyright">Copyright © 2024 华服志. 仅供学习交流使用。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
